@@ -9,7 +9,7 @@ const News = () => {
       <h1>What you can Order from us</h1>
       <div className="card-body">
         <div className="card1">
-          <img src={assets.Fresh_Fruits01} alt="Fruit Image" className="card-image"/>
+          <img src={assets.Fresh_Fruits01} alt="Fresh Fruit" className="card-image"/>
           <div className="card-content">
             <h2 className="card-title">Fresh Fruits for Sale in the Best Condition</h2>
             <br/>
@@ -27,7 +27,7 @@ const News = () => {
         </div>
 
         <div className="card1">
-          <img src={assets.juices} alt="Fruit Image" className="card-image" />
+          <img src={assets.juices} alt="Fruit Juices" className="card-image" />
           <div className="card-content">
             <h2 className="card-title">Explore Our Fresh, Handcrafted Whole Fruit Juices</h2>
             <br/>
@@ -45,7 +45,7 @@ const News = () => {
         <div className="card1">
           <img
             src={assets.Fruit_Salad}
-            alt="Fruit Image"
+            alt="Fruit Salads"
             className="card-image"
           />
           <div className="card-content">
@@ -66,7 +66,7 @@ const News = () => {
         <div className="card1">
           <img
             src={assets.Fruit_cake}
-            alt="Fruit Image"
+            alt="Fruit Cakes"
             className="card-image"
           />
           <div className="card-content">
