@@ -5,6 +5,7 @@ import AppDownload from "../../components/AppDownload/AppDownload";
 
 const MobileApp = () => {
   useEffect(() => {
+    document.title = "Fresh Fruits | Mobile App";
     window.scrollTo(0, 0);
   }, []);
 

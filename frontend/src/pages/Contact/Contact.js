@@ -1,7 +1,13 @@
 import React from "react";
+import { useEffect } from "react";
 import "./Contact.css";
 
 export default function About() {
+
+  useEffect(() => {
+    document.title = "Fresh Fruits | Contact US";
+  }, []);
+
   return (
     <div className="contact-body">
       <h1>Simple Contact Page</h1>

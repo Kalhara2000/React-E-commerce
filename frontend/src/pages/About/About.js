@@ -1,7 +1,13 @@
 import React from "react";
+import { useEffect } from "react";
 import "./About.css";
 
 export default function About() {
+  
+  useEffect(() => {
+    document.title = "Fresh Fruits | About";
+  }, []);
+
   return (
     <div className="contat-boday">
       <div className="about-section">
