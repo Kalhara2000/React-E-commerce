@@ -1,0 +1,87 @@
+.mobile-app-body {
+  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+  padding-top: 70px;
+  animation: fadeIn 1s ease-in;
+}
+
+.mobile-bg {
+  width: 70%;
+  padding-top: 55px;
+  border-radius: 140px;
+}
+
+.mobile-text {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  max-width: 16%;
+  gap: 2vw;
+  top: 30%;
+  left: 20vw;
+}
+
+.mobile-h1 {
+  font-weight: 50;
+  font-size: max(3vw, 12px);
+}
+
+.mobile-p {
+  font-size: max(1.1vw, 8px);
+  font-family: sans-serif;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .mobile-bg {
+      width: 80%;
+      border-radius: 120px;
+  }
+  .mobile-text {
+      max-width: 20%;
+      left: 15vw;
+  }
+  .mobile-h1 {
+      font-size: max(4vw, 14px);
+  }
+  .mobile-p {
+      font-size: max(1.3vw, 10px);
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-bg {
+      padding-top: 150px;
+      width: 90%;
+      border-radius: 100px;
+  }
+  .mobile-text {
+     padding-top: 40px;
+      max-width: 30%;
+      left: 10vw;
+  }
+  .mobile-h1 {
+      font-size: max(4vw, 16px);
+  }
+  .mobile-p {
+      font-size: max(0.2vw, 10px);
+  }
+}
+
+@media (max-width: 480px) {
+  .mobile-bg {
+      padding-top: 150px;
+      width: 100%;
+      border-radius: 80px;
+  }
+  .mobile-text {
+      max-width: 40%;
+      left: 5vw;
+  }
+  .mobile-h1 {
+      font-size: max(6vw, 18px);
+  }
+  .mobile-p {
+      font-size: max(1.7vw, 14px);
+  }
+}

@@ -1,0 +1,162 @@
+.navbar {
+  padding: 1px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed; /* Fix the navbar at the top */
+  top: 0; /* Align it to the top of the page */
+  width: 100%; /* Make it span the full width */
+  z-index: 1000; /* Ensure it stays above other content */
+  background-color: #e9e7d9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for better separation */
+}
+
+.logo {
+  width: 160px;
+  height: auto;
+  padding-left: 5px;
+}
+
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  font-size: 18px;
+  color: #92400e;
+}
+
+.navbar-menu li {
+  cursor: pointer;
+}
+
+.navbar-menu .active {
+  padding-bottom: 2px;
+  border-bottom: 2px solid #49557e;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+.navbar button {
+  background: transparent;
+  font-size: 16px;
+  color: #000000;
+  border: 1px solid #000000;
+  padding: 10px 30px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.navbar button:hover {
+  background-color: #d97706;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+}
+
+.navbar-search-icon {
+  position: relative;
+  padding-left: 20px;
+  width: 50px;
+}
+
+.dot {
+  position: relative;
+  border-radius: 80px;
+  top: -45px;
+  right: -25px;
+  background-color: tomato;
+  text-align: center;
+  color: #ffffff;
+}
+
+.navbar-basket-icon {
+  width: 35px;
+}
+
+.cart {
+  padding-top: 25px;
+}
+
+/* Responsive CSS */
+@media (max-width: 1024px) {
+  .navbar-menu {
+    gap: 15px;
+    font-size: 16px;
+  }
+
+  .navbar-right {
+    gap: 30px;
+  }
+
+  .navbar button {
+    padding: 8px 20px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .logo {
+    margin-bottom: 60px;
+  }
+
+  .navbar-menu {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .navbar-right {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
+  .navbar button {
+    width: 30%;
+    padding: 8px 10px;
+  }
+}
+
+
+
+
+
+
+
+@media (max-width: 480px) {
+  .navbar-menu {
+    font-size: 14px;
+  }
+
+  .navbar-right {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .navbar button {
+    padding: 6px 10px;
+    width: 100%;
+  }
+  .logo{
+    padding-top: 30px;
+    padding-bottom: 0px;
+  }
+}

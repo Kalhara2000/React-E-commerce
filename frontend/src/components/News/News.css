@@ -1,0 +1,85 @@
+.containter-card{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: 0.3s;
+    animation: fadeIn 1s;
+}
+
+.containter-card h1{
+    color: #262626;
+    font-weight: 700;
+}
+.card-body {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(580px,1fr));
+    margin-top: 30px;
+    gap: 20px;
+    row-gap: 50px;
+}
+
+.card1 {
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px #00000015;
+    flex: 1 1 100%; /* Ensure cards take full width on small screens */
+    margin: 10px; /* Add some margin to separate the cards */
+}
+
+.card-image {
+    width: 100%; /* Full width for images */
+    max-width: 250px; /* Maximum width for images */
+    height: 350; /* Maintain aspect ratio */
+    padding-left: 20px;
+}
+
+.card-content {
+    padding: 16px;
+}
+
+.card-title {
+    margin: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.card-description {
+    margin-top: 8px;
+    color: #5b5b5b;
+}
+
+
+
+.menu-explore{
+    margin:  auto auto;
+    margin-top: 100px;
+    font-size: max(3vw,20px);
+    text-align: center;
+    font-weight: 500;
+    padding-bottom: 50px;
+    transition: 0.3s;
+    animation: fadeIn 1s;
+}
+
+.menu-explore p{
+    color: #000;
+}
+
+.menu-explore-btn button {
+    border: none;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 1vw 2.3vw;
+    background-color: rgb(0, 0, 0);
+    font-size: max(1vw, 13px);
+    border-radius: 50px;
+    transition: right 0.8s ease-in-out, background-color 0.3s ease;
+  }
+  
+  .menu-explore-btn button:hover {
+    background-color: #d97706;
+    color: white;
+    right: 0;
+  }

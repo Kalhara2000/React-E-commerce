@@ -1,0 +1,124 @@
+.header {
+    height: 34vw;
+    margin: 30px auto;
+    background: url('./header.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding-top: 80px;
+  }
+  
+  .header-contents {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5vw;
+    max-width: 60%;
+    bottom: 10%;
+    left: 8vw;
+    animation: fadeIn 1s ease-in;
+  }
+  
+  .header-contents h2 {
+    font-weight: 500;
+    color: white;
+    font-size: max(4.5vw, 22px);
+  }
+  
+  .header-contents p {
+    color: white;
+    font-size: max(1.1vw, 14px);
+    font-family: sans-serif;
+  }
+  
+  .header-contents button {
+    border: none;
+    color: #747474;
+    font-weight: 600;
+    padding: 1vw 2.3vw;
+    background-color: white;
+    font-size: max(1vw, 13px);
+    border-radius: 50px;
+    transition: right 0.8s ease-in-out, background-color 0.3s ease;
+  }
+  
+  .header-contents button:hover {
+    background-color: #d97706;
+    color: white;
+    right: 0;
+  }
+  
+  /* Responsive CSS */
+  @media (max-width: 1024px) {
+    .header {
+      height: 40vw;
+    }
+  
+    .header-contents {
+      left: 5vw;
+      max-width: 70%;
+    }
+  
+    .header-contents h2 {
+      font-size: max(4vw, 20px);
+    }
+  
+    .header-contents p {
+      font-size: max(1.5vw, 12px);
+    }
+  
+    .header-contents button {
+      padding: 1.2vw 2.5vw;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .header {
+      height: 45vw;
+      padding-top: 300px;
+    }
+  
+    .header-contents {
+      left: 4vw;
+      max-width: 80%;
+      bottom: 8%;
+    }
+  
+    .header-contents h2 {
+      font-size: max(5vw, 18px);
+    }
+  
+    .header-contents p {
+      font-size: max(1.7vw, 11px);
+    }
+  
+    .header-contents button {
+      padding: 1.5vw 3vw;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .header {
+      height: 50vw;
+      padding-top: 320px;
+    }
+  
+    .header-contents {
+      left: 3vw;
+      max-width: 90%;
+      bottom: 5%;
+    }
+  
+    .header-contents h2 {
+      font-size: max(6vw, 16px);
+    }
+  
+    .header-contents p {
+      font-size: max(2vw, 10px);
+    }
+  
+    .header-contents button {
+      padding: 2vw 4vw;
+    }
+  }

@@ -1,23 +1,25 @@
 import React from "react";
 import "./App.css";
-import Home from "./pages/Home";
-import News from "./pages/News";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import Home from "./pages/Home/Home";
+import Menu from "./pages/Menu/Menu";
+import About from "./pages/About/About";
+import MobileApp from "./pages/MobileApp/MobileApp";
+import Contact from "./pages/Contact/Contact";
+import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 const App = () => {
   return (
     <Router>
-      <div>
+      <div className="boday-class">
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/news" element={<News />} />
+          <Route path="/menu" element={<Menu />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/mobile-app" element={<MobileApp />} />
         </Routes>
         <Footer />
       </div>

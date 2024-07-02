@@ -1,0 +1,54 @@
+import React from "react";
+import { NavLink } from "react-router-dom";
+import { Link } from 'react-router-dom';
+import { assets } from "../../asset/assets";
+import "./Navbar.css";
+
+const Navbar = () => {
+  return (
+    <div className="navbar">
+      <Link to="/">
+        <img src={assets.logo1} alt="Logo" className="logo" />
+      </Link>
+      <ul className="navbar-menu">
+        <li>
+          <NavLink to="/" exact activeClassName="active">
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/menu" activeClassName="active">
+            Menu
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/mobile-app" activeClassName="active">
+            Mobile app
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/contact" activeClassName="active">
+            Contact us
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/about" activeClassName="active">
+            About
+          </NavLink>
+        </li>
+      </ul>
+      <div className="navbar-right">
+        <img src={assets.search} alt="Search" className="navbar-search-icon" />
+        <div className="cart">
+          <Link to="/cart">
+            <img src={assets.cart} alt="Basket" className="navbar-basket-icon"/>
+          </Link>
+          <div className="dot">0</div>
+        </div>
+        <button><Link to="/sign-in">Sign in</Link></button>
+      </div>
+    </div>
+  );
+};
+
+export default Navbar;
