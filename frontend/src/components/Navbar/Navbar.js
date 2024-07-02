@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import { assets } from "../../asset/assets";
 import "./Navbar.css";
+import { StoreContext } from "../../context/StoreContext";
 
 const Navbar = () => {
+
+  const {getTotalCartAmount} = useContext(StoreContext)
+
   return (
     <div className="navbar">
       <Link to="/">
@@ -39,11 +43,11 @@ const Navbar = () => {
       </ul>
       <div className="navbar-right">
         <img src={assets.search} alt="Search" className="navbar-search-icon" />
-        <div className="cart">
+        <div className="cartbutton">
           <Link to="/cart">
             <img src={assets.cart} alt="Basket" className="navbar-basket-icon"/>
           </Link>
-          <div className="dot">0</div>
+          <div className={getTotalCartAmount()===0?"":"dot"}></div>
         </div>
         <button><Link to="/sign-in">Sign in</Link></button>
       </div>
