@@ -13,13 +13,13 @@ const PlaceOrder = () => {
         <p className='title'>Delivery information</p>
         <div className='multi-feilds'>
             <input type='text' placeholder='First name' />
-            <input type='text' placeholder='Street' />
+            <input type='text' placeholder='Last name' />
         </div>
             <input type='email' placeholder='Email address' />
-            <input type='text' placeholder='Street' />
+            <input type='text' placeholder='Address' />
         <div className='multi-feilds'>
             <input type='text' placeholder='City' />
-            <input type='text' placeholder='State' />
+            <input type='text' placeholder='Country' />
         </div>
         <div className='multi-feilds'>
             <input type='text' placeholder='Zip code' />
