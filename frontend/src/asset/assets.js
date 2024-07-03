@@ -110,11 +110,11 @@ export const menu_list = [
         menu_image: menu_6
     },
     {
-        menu_name: "Salad",
+        menu_name: "Pasta",
         menu_image: menu_7
     },
     {
-        menu_name: "Salad",
+        menu_name: "Noodles",
         menu_image: menu_8
     }
 ]
@@ -124,7 +124,7 @@ export const food_list = [
         _id: "1",
         name: "Greek salad",
         image: food_1,
-        price: 12,
+        price: 120,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Salad"
     },
@@ -132,7 +132,7 @@ export const food_list = [
         _id: "2",
         name: "Veg salad",
         image: food_2,
-        price: 18,
+        price: 180,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Salad"
     },
@@ -140,7 +140,7 @@ export const food_list = [
         _id: "3",
         name: "Clover salad",
         image: food_3,
-        price: 23,
+        price: 230,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Salad"
     },
@@ -148,7 +148,7 @@ export const food_list = [
         _id: "4",
         name: "Chicken salad",
         image: food_4,
-        price: 30,
+        price: 300,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Salad"
     },
@@ -156,7 +156,7 @@ export const food_list = [
         _id: "5",
         name: "Lasagna Rolls",
         image: food_5,
-        price: 30,
+        price: 300,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Rolls"
     },
@@ -164,7 +164,7 @@ export const food_list = [
         _id: "6",
         name: "Peri Rolls",
         image: food_6,
-        price: 30,
+        price: 300,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Rolls"
     },
@@ -172,7 +172,7 @@ export const food_list = [
         _id: "7",
         name: "Chicken Rolls",
         image: food_7,
-        price: 30,
+        price: 300,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Rolls"
     },
@@ -180,7 +180,7 @@ export const food_list = [
         _id: "8",
         name: "Veg Rolls",
         image: food_8,
-        price: 25,
+        price: 250,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Rolls"
     },
@@ -188,7 +188,7 @@ export const food_list = [
         _id: "9",
         name: "Ripple Ice Cream",
         image: food_9,
-        price: 45,
+        price: 450,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Ice Cream"
     },
