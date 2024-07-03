@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 import { food_list } from "../asset/assets";
 
 export const StoreContext = createContext(null);
@@ -14,7 +14,7 @@ const StoreContextProvider = (props) => {
     }
   };
 
-  const removeFromCart = (itemId) => { // Correct spelling
+  const removeFromCart = (itemId) => {
     setCartItem((prev) => {
       const updatedItems = { ...prev };
       if (updatedItems[itemId] > 1) {
@@ -28,19 +28,18 @@ const StoreContextProvider = (props) => {
 
   const getTotalCartAmount = () => {
     let totalAmount = 0;
-    for(const item in cartItems){
-        if (cartItems[item]>0) {
-            let itemInfo = food_list.find((product)=>product._id === item);
-            totalAmount += itemInfo.price* cartItems[item];
-        }
+    for (const item in cartItems) {
+      if (cartItems[item] > 0) {
+        let itemInfo = food_list.find((product) => product._id === item);
+        totalAmount += itemInfo.price * cartItems[item];
+      }
     }
     return totalAmount;
-}
+  };
 
-
-  useEffect(() => {
-    console.log(cartItems);
-  }, [cartItems]);
+  // useEffect(() => {
+  //   console.log(cartItems);
+  // }, [cartItems]);
 
   const contextValue = {
     food_list,
@@ -48,7 +47,7 @@ const StoreContextProvider = (props) => {
     addToCart,
     removeFromCart,
     setCartItem,
-    getTotalCartAmount // Correct spelling
+    getTotalCartAmount, // Correct spelling
   };
 
   return (

@@ -5,10 +5,10 @@ import Menu from "./pages/Menu/Menu";
 import About from "./pages/About/About";
 import MobileApp from "./pages/MobileApp/MobileApp";
 import Contact from "./pages/Contact/Contact";
-import Navbar from "./components/Navbar/Navbar";
-import Footer from "./components/Footer/Footer";
 import Cart from "./pages/Cart/Cart";
 import PlaceOrder from "./pages/PlaceOrder/PlaceOrder";
+import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 

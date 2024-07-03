@@ -1,56 +1,60 @@
-import React, { useContext } from 'react'
-import './PlaceOrder.css'
-import { StoreContext } from '../../context/StoreContext';
-
+import React, { useContext, useEffect } from "react";
+import "./PlaceOrder.css";
+import { StoreContext } from "../../context/StoreContext";
 
 const PlaceOrder = () => {
+  useEffect(() => {
+    document.title = "Fresh Fruits | PlaceOrder";
+  }, []);
 
-  const {getTotalCartAmount} = useContext(StoreContext);
+  const { getTotalCartAmount } = useContext(StoreContext);
 
   return (
-    <form className='place-order'>
-      <div className='place-order-left'>
-        <p className='title'>Delivery information</p>
-        <div className='multi-feilds'>
-            <input type='text' placeholder='First name' />
-            <input type='text' placeholder='Last name' />
+    <form className="place-order">
+      <div className="place-order-left">
+        <p className="title">Delivery information</p>
+        <div className="multi-feilds">
+          <input type="text" placeholder="First name" />
+          <input type="text" placeholder="Last name" />
         </div>
-            <input type='email' placeholder='Email address' />
-            <input type='text' placeholder='Address' />
-        <div className='multi-feilds'>
-            <input type='text' placeholder='City' />
-            <input type='text' placeholder='Country' />
+        <input type="email" placeholder="Email address" />
+        <input type="text" placeholder="Address" />
+        <div className="multi-feilds">
+          <input type="text" placeholder="City" />
+          <input type="text" placeholder="Country" />
         </div>
-        <div className='multi-feilds'>
-            <input type='text' placeholder='Zip code' />
-            <input type='text' placeholder='State' />
+        <div className="multi-feilds">
+          <input type="text" placeholder="Zip code" />
+          <input type="text" placeholder="State" />
         </div>
-        <input type='text' placeholder='Phone'/>
+        <input type="text" placeholder="Phone" />
       </div>
-      <div className='place-order-right'>
-      <div className='cart-total'>
-                    <h2>Cart Totals</h2>
-                    <div>
-                        <div className='cart-total-details'>
-                            <p>Subtotal</p>
-                            <p>Rs: {getTotalCartAmount()}</p>
-                        </div>
-                        <hr />
-                        <div className='cart-total-details'>
-                            <p>Delivery Fee</p>
-                            <p>Rs: {getTotalCartAmount()===0?0:2}</p>
-                        </div>
-                        <hr />
-                        <div className='cart-total-details'>
-                            <p>Total</p>
-                            <b>Rs: {getTotalCartAmount()===0?0:getTotalCartAmount()+2}</b>
-                        </div>
-                    </div>
-                    <button>PROCEED TO PAYMENT</button>
-                </div>
+      <div className="place-order-right">
+        <div className="cart-total">
+          <h2>Cart Totals</h2>
+          <div>
+            <div className="cart-total-details">
+              <p>Subtotal</p>
+              <p>Rs: {getTotalCartAmount()}</p>
+            </div>
+            <hr />
+            <div className="cart-total-details">
+              <p>Delivery Fee</p>
+              <p>Rs: {getTotalCartAmount() === 0 ? 0 : 2}</p>
+            </div>
+            <hr />
+            <div className="cart-total-details">
+              <p>Total</p>
+              <b>
+                Rs: {getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 2}
+              </b>
+            </div>
+          </div>
+          <button>PROCEED TO PAYMENT</button>
+        </div>
       </div>
     </form>
-  )
-}
+  );
+};
 
-export default PlaceOrder
+export default PlaceOrder;
