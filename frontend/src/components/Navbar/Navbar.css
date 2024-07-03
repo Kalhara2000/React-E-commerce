@@ -63,22 +63,27 @@
   width: 50px;
 }
 
-.dot {
+.cartbutton{
   position: relative;
-  border-radius: 80px;
-  top: -45px;
-  right: -25px;
+}
+
+.cartbutton .dot {
+  position: absolute;
+  min-width: 10px;
+  min-height: 10px;
+  bottom: 35px;
+  right: -2px;
   background-color: tomato;
-  text-align: center;
-  color: #ffffff;
+  border-radius: 5px;
 }
 
 .navbar-basket-icon {
+
   width: 35px;
 }
 
-.cart {
-  padding-top: 25px;
+.cartbutton {
+  padding-top: 5px;
 }
 
 /* Responsive CSS */
