@@ -34,54 +34,64 @@
 /* Responsive adjustments */
 @media (max-width: 1024px) {
   .mobile-bg {
-      width: 80%;
-      border-radius: 120px;
+    padding-top: 150px;
+    width: 80%;
+    border-radius: 120px;
   }
+
   .mobile-text {
-      max-width: 20%;
-      left: 15vw;
+    max-width: 20%;
+    left: 15vw;
   }
+
   .mobile-h1 {
-      font-size: max(4vw, 14px);
+    font-size: max(4vw, 14px);
   }
+
   .mobile-p {
-      font-size: max(1.3vw, 10px);
+    font-size: max(1.3vw, 10px);
   }
 }
 
 @media (max-width: 768px) {
   .mobile-bg {
-      padding-top: 150px;
-      width: 90%;
-      border-radius: 100px;
+    padding-top: 150px;
+    width: 90%;
+    border-radius: 100px;
   }
+
   .mobile-text {
-     padding-top: 40px;
-      max-width: 30%;
-      left: 10vw;
+    padding-top: 40px;
+    max-width: 30%;
+    left: 10vw;
   }
+
   .mobile-h1 {
-      font-size: max(4vw, 16px);
+    font-size: max(4vw, 16px);
   }
+
   .mobile-p {
-      font-size: max(0.2vw, 10px);
+    font-size: max(0.2vw, 10px);
   }
 }
 
 @media (max-width: 480px) {
   .mobile-bg {
-      padding-top: 150px;
-      width: 100%;
-      border-radius: 80px;
+    padding-top: 150px;
+    width: 100%;
+    border-radius: 80px;
   }
+
   .mobile-text {
-      max-width: 40%;
-      left: 5vw;
+    max-width: 40%;
+    left: 5vw;
   }
+
   .mobile-h1 {
-      font-size: max(6vw, 18px);
+    font-size: max(6vw, 18px);
   }
+
   .mobile-p {
-      font-size: max(1.7vw, 14px);
+    font-size: max(1.7vw, 14px);
   }
 }

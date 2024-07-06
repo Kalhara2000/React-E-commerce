@@ -15,19 +15,19 @@ const PlaceOrder = () => {
         <p className="title">Delivery information</p>
         <div className="multi-feilds">
           <input type="text" placeholder="First name" />
-          <input type="text" placeholder="Last name" />
+          <input type="text" placeholder="Last name" required/>
         </div>
-        <input type="email" placeholder="Email address" />
-        <input type="text" placeholder="Address" />
+        <input type="email" placeholder="Email address" required/>
+        <input type="text" placeholder="Address" required/>
         <div className="multi-feilds">
-          <input type="text" placeholder="City" />
-          <input type="text" placeholder="Country" />
+          <input type="text" placeholder="City" required/>
+          <input type="text" placeholder="Country" required/>
         </div>
         <div className="multi-feilds">
-          <input type="text" placeholder="Zip code" />
+          <input type="text" placeholder="Zip code" required/>
           <input type="text" placeholder="State" />
         </div>
-        <input type="text" placeholder="Phone" />
+        <input type="text" placeholder="Phone" required/>
       </div>
       <div className="place-order-right">
         <div className="cart-total">
