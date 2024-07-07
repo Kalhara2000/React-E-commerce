@@ -4,7 +4,9 @@ import { useNavigate } from "react-router-dom";
 import { StoreContext } from "../../context/StoreContext";
 
 const Cart = () => {
-    
+  
+  const url ="http://localhost:4000";
+  
   useEffect(() => {
     document.title = "Fresh Fruits | Cart";
   }, []);
@@ -31,7 +33,7 @@ const Cart = () => {
             return (
               <div key={item._id}>
                 <div className="cart-items-title cart-items-item">
-                  <img src={item.image} alt="add items" />
+                  <img src={url+"/images/"+item.image} alt="add items" />
                   <p>{item.name}</p>
                   <p>Rs: {item.price}</p>
                   <p>{cartItems[item._id]}</p>
