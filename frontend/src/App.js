@@ -13,21 +13,22 @@ import Footer from "./components/Footer/Footer";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 const App = () => {
+ 
   return (
     <Router>
       <div className="boday-class">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/menu" element={<Menu />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/mobile-app" element={<MobileApp />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/place-order" element={<PlaceOrder />} />
-          <Route path="/signIn-signUp" element={<SignInSignUp />} />
-        </Routes>
-        <Footer />
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/menu" element={<Menu />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/mobile-app" element={<MobileApp />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/place-order" element={<PlaceOrder />} />
+            <Route path="/signIn-signUp" element={<SignInSignUp />} />
+          </Routes>
+          <Footer />
       </div>
     </Router>
   );
