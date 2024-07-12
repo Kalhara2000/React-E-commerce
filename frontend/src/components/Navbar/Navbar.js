@@ -6,7 +6,9 @@ import "./Navbar.css";
 import { StoreContext } from "../../context/StoreContext";
 import { AuthContext } from "../../context/AuthContext";
 
-const Navbar = () => {
+
+const Navbar = ({setShowLogin}) => {
+
   const { getTotalCartAmount } = useContext(StoreContext);
   const { authState, logout } = useContext(AuthContext);
 
@@ -54,16 +56,7 @@ const Navbar = () => {
           </Link>
           <div className={getTotalCartAmount() === 0 ? "" : "dot"}></div>
         </div>
-        {authState.isAuthenticated ? (
-          <>
-            {/* <img src={assets.add_icon_green} alt="User" className="user-image" /> */}
-            <button onClick={logout}>Logout</button>
-          </>
-        ) : (
-          <button>
-            <Link to="/SignIn-SignUp">Sign in</Link>
-          </button>
-        )}
+        <button onClick={()=>setShowLogin(true)}>Sign in</button>
       </div>
     </div>
   );
