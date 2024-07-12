@@ -19,6 +19,7 @@ import juices from "./juices.jpg";
 import Fruit_Salad from "./Fruit_Salad.jpg";
 import Fruit_cake from "./Fruit_cake.jpg";
 import mobile_bg from "./mobile_bg.jpg";
+import cross_icon from "./cross_icon.png";
 
 import menu_1 from "./menu_1.png";
 import menu_2 from "./menu_2.png";
@@ -62,6 +63,7 @@ export const assets = {
     Fruit_Salad,
     Fruit_cake,
     mobile_bg,
+    cross_icon,
     
 
     menu_1,

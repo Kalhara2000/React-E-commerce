@@ -5,7 +5,7 @@ import { assets } from "../../asset/assets";
 import "./Navbar.css";
 import { StoreContext } from "../../context/StoreContext";
 
-const Navbar = () => {
+const Navbar = ({setShowLogin}) => {
 
   const {getTotalCartAmount} = useContext(StoreContext)
 
@@ -49,7 +49,7 @@ const Navbar = () => {
           </Link>
           <div className={getTotalCartAmount()===0?"":"dot"}></div>
         </div>
-        <button><Link to="/SignIn-SignUp">Sign in</Link></button>
+        <button onClick={()=>setShowLogin(true)}>Sign in</button>
       </div>
     </div>
   );

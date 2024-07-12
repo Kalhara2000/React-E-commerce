@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Home from "./pages/Home/Home";
 import Menu from "./pages/Menu/Menu";
@@ -10,13 +10,20 @@ import PlaceOrder from "./pages/PlaceOrder/PlaceOrder";
 import SignInSignUp from "./pages/SignInSignUp/SignInSignUp";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
+import LoginPopup from "./components/LoginPopup/LoginPopup";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 const App = () => {
+  const [showLogin, setShowLogin] = useState(false);
+
   return (
     <Router>
       <div className="boday-class">
-        <Navbar />
+        <>
+          {showLogin && <LoginPopup setShowLogin={setShowLogin} />}
+          <div className="app"></div>
+        </>
+        <Navbar setShowLogin={setShowLogin} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/menu" element={<Menu />} />
