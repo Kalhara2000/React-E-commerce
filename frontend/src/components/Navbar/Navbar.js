@@ -49,7 +49,7 @@ const Navbar = () => {
           </Link>
           <div className={getTotalCartAmount()===0?"":"dot"}></div>
         </div>
-        <button><Link to="/sign-in">Sign in</Link></button>
+        <button><Link to="/SignIn-SignUp">Sign in</Link></button>
       </div>
     </div>
   );
