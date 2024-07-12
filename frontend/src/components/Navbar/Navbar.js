@@ -4,13 +4,11 @@ import { Link } from "react-router-dom";
 import { assets } from "../../asset/assets";
 import "./Navbar.css";
 import { StoreContext } from "../../context/StoreContext";
-import { AuthContext } from "../../context/AuthContext";
 
 
 const Navbar = ({setShowLogin}) => {
 
   const { getTotalCartAmount } = useContext(StoreContext);
-  const { authState, logout } = useContext(AuthContext);
 
   return (
     <div className="navbar">
