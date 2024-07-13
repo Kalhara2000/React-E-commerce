@@ -5,13 +5,12 @@ import { StoreContext } from "../../context/StoreContext";
 
 const Cart = () => {
   
-  const url ="http://localhost:4000";
   
   useEffect(() => {
     document.title = "Fresh Fruits | Cart";
   }, []);
 
-  const { cartItems, food_list, removeFromCart, getTotalCartAmount } =
+  const { cartItems, food_list, removeFromCart, getTotalCartAmount, url } =
     useContext(StoreContext);
 
   const navigate = useNavigate();
