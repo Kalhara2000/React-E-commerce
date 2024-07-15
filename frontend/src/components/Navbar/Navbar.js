@@ -1,12 +1,13 @@
 import React, { useContext } from "react";
-import { NavLink } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { assets } from "../../asset/assets";
-import "./Navbar.css";
 import { StoreContext } from "../../context/StoreContext";
+import "./Navbar.css";
 
 const Navbar = ({ setShowLogin }) => {
   const { getTotalCartAmount, token, setToken } = useContext(StoreContext);
+  const navigate = useNavigate();
+  console.log();
 
   const logout = () => {
     localStorage.removeItem("token");
@@ -64,7 +65,7 @@ const Navbar = ({ setShowLogin }) => {
           <div className="nabvar-profile">
             <img src={assets.profile_icon} alt="Profile icon" />
             <ul className="nav-profile-dropdown">
-              <li>
+              <li onClick={() =>navigate('/myorders')}>
                 <img src={assets.bag_icon} alt="bag icon" />
                 <p>Orders</p>
               </li>
