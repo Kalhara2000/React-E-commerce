@@ -6,6 +6,7 @@ import About from "./pages/About/About";
 import MobileApp from "./pages/MobileApp/MobileApp";
 import Contact from "./pages/Contact/Contact";
 import Cart from "./pages/Cart/Cart";
+import MyOrders from "./pages/MyOrders/MyOrders";
 import PlaceOrder from "./pages/PlaceOrder/PlaceOrder";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
@@ -31,6 +32,7 @@ const App = () => {
           <Route path="/mobile-app" element={<MobileApp />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/place-order" element={<PlaceOrder />} />
+          <Route path="/myorders" element={<MyOrders />} />
         </Routes>
         <Footer />
       </div>

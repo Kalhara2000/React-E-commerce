@@ -1,15 +1,22 @@
 import React, { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./PlaceOrder.css";
 import { StoreContext } from "../../context/StoreContext";
 import axios from "axios";
 
 const PlaceOrder = () => {
-  useEffect(() => {
-    document.title = "Fresh Fruits | PlaceOrder";
-  }, []);
+  const { getTotalCartAmount, token, food_list, cartItems, url } = useContext(StoreContext);
+  const navigate = useNavigate();
 
-  const { getTotalCartAmount, token, food_list, cartItems, url } =
-    useContext(StoreContext);
+  useEffect(() => {
+    document.title = "Fresh Fruits | Place Order";
+
+    if (!token) {
+      navigate('/cart');
+    } else if (getTotalCartAmount() === 0) {
+      navigate('/cart');
+    }
+  }, [token, navigate, getTotalCartAmount]);
 
   const [data, setData] = useState({
     firstName: "",
@@ -29,10 +36,6 @@ const PlaceOrder = () => {
     setData((data) => ({ ...data, [name]: value }));
   };
 
-  // useEffect(() => {
-  //   console.log(data);
-  // }, [data]);
-
   const placeholder = async (event) => {
     event.preventDefault();
     let orderItems = [];
@@ -46,24 +49,25 @@ const PlaceOrder = () => {
       return null;
     });
 
-    // console.log(orderItems);
-
     let orderData = {
       address: data,
       items: orderItems,
       amount: getTotalCartAmount() + 200,
     };
 
-    ///api/order/place
-    let response = await axios.post(url + "/api/place-order/place", orderData, {
-      headers: { token },
-    });
+    try {
+      let response = await axios.post(url + "/api/place-order/place", orderData, {
+        headers: { token },
+      });
 
-    if (response.data.success) {
-      const { session_url } = response.data;
-      window.location.replace(session_url);
-    } else {
-      alert("Error nnnn");
+      if (response.data.success) {
+        const { session_url } = response.data;
+        window.location.replace(session_url);
+      } else {
+        alert("Error placing order");
+      }
+    } catch (error) {
+      console.error("Error placing order", error);
     }
   };
 
@@ -78,6 +82,7 @@ const PlaceOrder = () => {
             onChange={onChangeHandler}
             value={data.firstName}
             placeholder="First name"
+            required
           />
           <input
             type="text"
@@ -141,13 +146,13 @@ const PlaceOrder = () => {
         </div>
         <input
           type="text"
-          name="phone"
-          onChange={onChangeHandler}
-          value={data.phone}
-          placeholder="Phone"
-          required
-        />
-      </div>
+            name="phone"
+            onChange={onChangeHandler}
+            value={data.phone}
+            placeholder="Phone"
+            required
+          />
+        </div>
       <div className="place-order-right">
         <div className="cart-total">
           <h2>Cart Totals</h2>
