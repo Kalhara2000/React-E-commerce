@@ -6,7 +6,6 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 //placing user order for frontend
 const placeOrder = async (req, res) => {
-
   const frontend_url = "http://localhost:3000";
 
   try {
@@ -43,33 +42,57 @@ const placeOrder = async (req, res) => {
       quantity: 1,
     });
 
-    //create session for orders
+    //create session for orders - API
     const session = await stripe.checkout.sessions.create({
-        line_items: line_items,
-        mode: 'payment',
-        success_url: `${frontend_url}/verify?success=true&orderId=${newOrder._id}`,
-        cancel_url: `${frontend_url}/verify?success=false&orderId=${newOrder._id}`,
-      });
-      
+      line_items: line_items,
+      mode: "payment",
+      success_url: `${frontend_url}/verify?success=true&orderId=${newOrder._id}`,
+      cancel_url: `${frontend_url}/verify?success=false&orderId=${newOrder._id}`,
+    });
 
     res.json({ success: true, session_url: session.url });
-
   } catch (error) {
-    console.log(error);
+    //console.log(error);
     res.json({ success: false, message: "Error" });
   }
 };
 
-
-//user order for frontend - done
-const userOrders = async (req,res) =>{
+//user order for frontend - API done
+const userOrders = async (req, res) => {
   try {
-    const orders = await orderModel.find({userId:req.body.userId});
-    res.json({ success: true, data:orders })
+    const orders = await orderModel.find({ userId: req.body.userId });
+    res.json({ success: true, data: orders });
   } catch (error) {
-    console.log(error);
+    //console.log(error);
     res.json({ success: false, message: "user orders Error" });
   }
-}
+};
 
-export { placeOrder,userOrders };
+//Displaing orders for admin panel-API
+const listOrders = async (req, res) => {
+  try {
+    const orders = await orderModel.find({});
+    //console.log("Orders fetched from DB:", orders); // Log orders
+    res.status(200).json({ success: true, data: orders });
+  } catch (error) {
+    console.error(error);
+    res
+      .status(500)
+      .json({ success: false, message: "Error fetching orders for admin" });
+  }
+};
+
+//Updating order status-API
+const updateStatus = async (req, res) => {
+  try {
+    await orderModel.findByIdAndUpdate(req.body.orderId, {
+      status: req.body.status,
+    });
+    res.json({ success: true, message: "Status Updated..!" });
+  } catch (error) {
+    console.log(error);
+    res.json({ success: false, message: "Status Update Failed..!" });
+  }
+};
+
+export { placeOrder, userOrders, listOrders, updateStatus };
