@@ -25,6 +25,12 @@ import bag_icon from "./bag_icon.png";
 import logout_icon from "./logout_icon.png";
 import parcel_icon from "./parcel_icon.png";
 import background_us from "./background_us.jpg";
+import msg_icon from "./msg-icon.png";
+import mail_icon from "./mail-icon.png";
+import phone_icon from "./phone-icon.png";
+import location_icon from "./location-icon.png";
+import white_arrow from "./next-icon.png";
+
 
 import menu_1 from "./menu_1.png";
 import menu_2 from "./menu_2.png";
@@ -74,7 +80,12 @@ export const assets = {
     logout_icon,
     parcel_icon,
     background_us,
-    
+    msg_icon,
+    mail_icon,
+    phone_icon,
+    location_icon,
+    white_arrow,
+
 
     menu_1,
     menu_2,
