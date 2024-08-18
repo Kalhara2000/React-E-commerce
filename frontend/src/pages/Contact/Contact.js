@@ -43,7 +43,7 @@ export default function Contact() {
       <h3>Contact Us</h3>
       <div className='contact'>
         <div className="contact-col">
-          <h4>Send us a message <img src={assets.mail_icon} alt="" /></h4>
+          <h4>Send us a message <img src={assets.msg_icon} alt="" /></h4>
           <p>
           Discover our mouthwatering menu featuring dishes crafted from your favorite fruits. From refreshing mango 
           smoothie bowls to delectable strawberry shortcakes, indulge in the freshest flavors nature has to offer.
@@ -62,7 +62,7 @@ export default function Contact() {
             <input type="email" name="email" id="" placeholder='Enter your Email' required />
             <label htmlFor="">Write your messages here</label>
             <textarea name="message" rows="6" placeholder='Enter your message' required></textarea>
-            <button type='submit' className='btn dark-btn'>Submit Now <img src={assets.white_arrow}/></button>
+            <button type='submit' className='btn dark-btn'>Submit Now <img src={assets.white_arrow} alt=""/></button>
 
           </form>
           <span style={{ color: resultColor }}>{result}</span>

@@ -31,6 +31,7 @@ import phone_icon from "./phone-icon.png";
 import location_icon from "./location-icon.png";
 import white_arrow from "./next-icon.png";
 
+
 import menu_1 from "./menu_1.png";
 import menu_2 from "./menu_2.png";
 import menu_3 from "./menu_3.png";
@@ -84,7 +85,7 @@ export const assets = {
     phone_icon,
     location_icon,
     white_arrow,
-    
+
 
     menu_1,
     menu_2,
