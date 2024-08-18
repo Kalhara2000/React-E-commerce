@@ -1,49 +1,85 @@
-import React from "react";
-import { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./Contact.css";
+import { assets } from "../../asset/assets";
 
-export default function About() {
-
+export default function Contact() {
   useEffect(() => {
     document.title = "Fresh Fruits | Contact US";
+    window.scrollTo(0, 0);
   }, []);
 
+  const [result, setResult] = useState("");
+  const [resultColor, setResultColor] = useState("");
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    setResultColor("blue");
+
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "6f15271f-3230-4d0e-b29e-4b0ff89f655f");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Form Submitted Successfully!");
+      setResultColor("green");
+      event.target.reset();
+    } else {
+      console.error("Error:", data);
+      setResult(data.message);
+      setResultColor("red");
+    }
+  };
+
   return (
-    <div className="contact-body">
-      <h1>Simple Contact Page</h1>
-      <form>
-        <label htmlFor="fname">First Name</label>
+    <div
+      className="contact-body"
+      style={{
+        backgroundImage: `url(${assets.background_us})`,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+      }}
+    >
+      <form onSubmit={onSubmit}>
+        <h1>Contact US</h1>
+        <label htmlFor="fname">Initials with name</label>
         <input
           type="text"
-          id="fname"
-          name="firstname"
+          name="name"
           placeholder="Your name.."
+          aria-label="Your name"
+          required
         />
 
-        <label htmlFor="lname">Last Name</label>
+        <label htmlFor="lname">Email</label>
         <input
-          type="text"
-          id="lname"
-          name="lastname"
-          placeholder="Your last name.."
+          type="email"
+          name="email"
+          placeholder="Your email address.."
+          aria-label="Your email address"
+          required
         />
-
-        <label htmlFor="country">Country</label>
-        <select id="country" name="country">
-          <option value="australia">Australia</option>
-          <option value="canada">Canada</option>
-          <option value="usa">USA</option>
-        </select>
 
         <label htmlFor="subject">Subject</label>
         <textarea
           id="subject"
-          name="subject"
+          name="message"
           placeholder="Write something.."
           style={{ height: "200px" }}
+          aria-label="Your message"
+          required
         ></textarea>
 
         <input type="submit" value="Submit" />
+        <span style={{ color: resultColor }}>{result}</span>
       </form>
     </div>
   );
