@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Contact.css";
+import { assets } from "../../asset/assets";
 
 export default function Contact() {
   useEffect(() => {
@@ -38,42 +39,37 @@ export default function Contact() {
   };
 
   return (
-    <div
-      className="contact-body"
-    >
-      <form onSubmit={onSubmit}>
-        <h1>Contact US</h1>
-        <label htmlFor="fname">Initials with name</label>
-        <input
-          type="text"
-          name="name"
-          placeholder="Your name.."
-          aria-label="Your name"
-          required
-        />
+    <div className="body-contact">
+      <h3>Contact Us</h3>
+      <div className='contact'>
+        <div className="contact-col">
+          <h4>Send us a message <img src={assets.mail_icon} alt="" /></h4>
+          <p>
+          Discover our mouthwatering menu featuring dishes crafted from your favorite fruits. From refreshing mango 
+          smoothie bowls to delectable strawberry shortcakes, indulge in the freshest flavors nature has to offer.
+          </p>
+          <ul>
+            <li><img src={assets.mail_icon} alt="" />fruitsmarket.contact@gmai.com</li>
+            <li><img src={assets.phone_icon} alt="" />+94 71 258 xxx</li>
+            <li><img src={assets.location_icon} alt="" />No 20/6, Main Street, Colombo 03</li>
+          </ul>
+        </div>
+        <div className="contact-col">
+          <form onSubmit={onSubmit}>
+            <label htmlFor="">Your name</label>
+            <input type="text" name="name" id="" placeholder='Enter Your name' required />
+            <label htmlFor="">Email</label>
+            <input type="email" name="email" id="" placeholder='Enter your Email' required />
+            <label htmlFor="">Write your messages here</label>
+            <textarea name="message" rows="6" placeholder='Enter your message' required></textarea>
+            <button type='submit' className='btn dark-btn'>Submit Now <img src={assets.white_arrow}/></button>
 
-        <label htmlFor="lname">Email</label>
-        <input
-          type="email"
-          name="email"
-          placeholder="Your email address.."
-          aria-label="Your email address"
-          required
-        />
-
-        <label htmlFor="subject">Subject</label>
-        <textarea
-          id="subject"
-          name="message"
-          placeholder="Write something.."
-          style={{ height: "200px" }}
-          aria-label="Your message"
-          required
-        ></textarea>
-
-        <input type="submit" value="Submit" />
-        <span style={{ color: resultColor }}>{result}</span>
-      </form>
+          </form>
+          <span style={{ color: resultColor }}>{result}</span>
+        </div>
+      </div>
     </div>
+
+
   );
 }
