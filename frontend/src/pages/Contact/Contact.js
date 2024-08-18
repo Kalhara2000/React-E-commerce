@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./Contact.css";
-import { assets } from "../../asset/assets";
 
 export default function Contact() {
   useEffect(() => {
@@ -41,12 +40,6 @@ export default function Contact() {
   return (
     <div
       className="contact-body"
-      style={{
-        backgroundImage: `url(${assets.background_us})`,
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-      }}
     >
       <form onSubmit={onSubmit}>
         <h1>Contact US</h1>
