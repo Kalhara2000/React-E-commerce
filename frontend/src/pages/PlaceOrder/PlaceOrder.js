@@ -3,9 +3,10 @@ import { useNavigate } from "react-router-dom";
 import "./PlaceOrder.css";
 import { StoreContext } from "../../context/StoreContext";
 import axios from "axios";
+import jsPDF from "jspdf";
 
 const PlaceOrder = () => {
-  const { getTotalCartAmount, token, food_list, cartItems, url } = useContext(StoreContext);
+  const { getTotalCartAmount, token, food_list, cartItems, setCartItems, url } = useContext(StoreContext);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -36,6 +37,34 @@ const PlaceOrder = () => {
     setData((data) => ({ ...data, [name]: value }));
   };
 
+  const generatePDF = () => {
+    const orderItems = food_list.filter(item => cartItems[item._id] > 0)
+      .map(item => ({
+        ...item,
+        quantity: cartItems[item._id]
+      }));
+
+    const doc = new jsPDF();
+
+    doc.text("Delivery Information", 10, 10);
+    doc.text(`Name: ${data.firstName} ${data.lastName}`, 10, 20);
+    doc.text(`Email: ${data.email}`, 10, 30);
+    doc.text(`Address: ${data.street}, ${data.city}, ${data.state}, ${data.zipcode}, ${data.country}`, 10, 40);
+    doc.text(`Phone: ${data.phone}`, 10, 50);
+
+    doc.text("Cart Items", 10, 70);
+    orderItems.forEach((item, index) => {
+      doc.text(`${index + 1}. ${item.name} - Quantity: ${item.quantity}`, 10, 80 + (index * 10));
+    });
+
+    doc.text("Cart Totals", 10, 100 + (orderItems.length * 10));
+    doc.text(`Subtotal: Rs ${getTotalCartAmount()}`, 10, 110 + (orderItems.length * 10));
+    doc.text(`Delivery Fee: Rs ${getTotalCartAmount() === 0 ? 0 : 200}`, 10, 120 + (orderItems.length * 10));
+    doc.text(`Total: Rs ${getTotalCartAmount() + 200}`, 10, 130 + (orderItems.length * 10));
+
+    doc.save("order-summary.pdf");
+  };
+
   const placeholder = async (event) => {
     event.preventDefault();
     let orderItems = [];
@@ -64,7 +93,26 @@ const PlaceOrder = () => {
         const { session_url } = response.data;
         window.location.replace(session_url);
       } else {
-        alert("Error placing order");
+        generatePDF();  // Generate PDF if the order is not successful
+
+        // Clear the input fields
+        setData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          street: "",
+          city: "",
+          state: "",
+          zipcode: "",
+          country: "",
+          phone: "",
+        });
+
+        // Clear the cart
+        setCartItems({});
+        
+        // Optionally, redirect to the orders page
+        navigate('/orders');
       }
     } catch (error) {
       console.error("Error placing order", error);
@@ -146,13 +194,13 @@ const PlaceOrder = () => {
         </div>
         <input
           type="text"
-            name="phone"
-            onChange={onChangeHandler}
-            value={data.phone}
-            placeholder="Phone"
-            required
-          />
-        </div>
+          name="phone"
+          onChange={onChangeHandler}
+          value={data.phone}
+          placeholder="Phone"
+          required
+        />
+      </div>
       <div className="place-order-right">
         <div className="cart-total">
           <h2>Cart Totals</h2>

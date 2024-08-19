@@ -5,9 +5,10 @@
     gap: 100px;
     margin-top: 125px;
     margin-bottom: 125px;
-    
-    
+    margin-left: 125px;
+    margin-right: 125px;
 }
+
 .place-order-left{
     width: 100%;
     max-width: max(30%,500px);
