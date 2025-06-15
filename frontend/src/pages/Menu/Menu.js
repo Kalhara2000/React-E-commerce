@@ -4,7 +4,6 @@ import ExploreMenu from "../../components/ExploreMenu/ExploreMenu";
 import FoodDisplay from "../../components/FoodDisplay/FoodDisplay";
 
 const Menu = () => {
-  
   useEffect(() => {
     document.title = "Fresh Fruits | Menu";
     window.scrollTo(0, 0);
