@@ -98,14 +98,14 @@ const Add = ({ url }) => {
               name="category"
               value={data.category}
             >
-              <option value="Salad">Salad</option>
-              <option value="Rolls">Rolls</option>
-              <option value="Deserts">Deserts</option>
-              <option value="Sandwich">Sandwich</option>
+              <option value="Fruit Salad">Fruit Salad</option>
+              <option value="Fruit Juice">Fruit Juice</option>
+              {/* <option value="Deserts">Deserts</option> */}
+              {/* <option value="Sandwich">Sandwich</option> */}
               <option value="Cake">Cake</option>
-              <option value="Pure Veg">Pure Veg</option>
-              <option value="Pasta">Pasta</option>
-              <option value="Noodles">Noodles</option>
+              <option value="Pure Fruit">Pure Fruit</option>
+              {/* <option value="Pasta">Pasta</option> */}
+              <option value="Ice Cream">Ice Cream</option>
             </select>
           </div>
           <div className="add-price flex-col">
