@@ -1,24 +1,20 @@
-.place-order{
+.place-order {
     display: flex;
-    align-items: start;
+    align-items: flex-start; /* ✅ Fixed */
     justify-content: space-between;
     gap: 100px;
-    margin-top: 125px;
-    margin-bottom: 125px;
-    margin-left: 125px;
-    margin-right: 125px;
+    margin: 125px;
 }
 
-.place-order-left{
+.place-order-left {
     width: 100%;
-    max-width: max(30%,500px);
-}
-.place-order-left{
+    max-width: max(30%, 500px);
     font-size: 30px;
     font-weight: 600;
     margin-top: 50px;
 }
-.place-order-left input{
+
+.place-order-left input {
     margin-bottom: 15px;
     width: 100%;
     padding: 10px;
@@ -26,18 +22,21 @@
     border-radius: 4px;
     outline-color: tomato;
 }
-.place-order-left .multi-feilds{
+
+.place-order-left .multi-feilds {
     display: flex;
     gap: 10px;
 }
-.place-order-right{
+
+.place-order-right {
     width: 100%;
-    max-width: max(40%),500px;
+    max-width: max(40%, 500px);
 }
-.place-order .cart-total button{
+
+.place-order .cart-total button {
     margin-top: 30px;
 }
 
-.title{
+.title {
     margin-bottom: 10px;
 }
