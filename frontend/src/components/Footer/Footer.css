@@ -52,6 +52,11 @@
   border: none;
 }
 
+.logo-f{
+  width: 15%;
+  background-color: #e9e7d9;
+}
+
 /* 🔽 Responsive Design for smaller screens */
 @media (max-width: 750px) {
   .footer-content {
