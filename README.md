@@ -56,8 +56,8 @@
 <h3>📥 1. Clone the Repository</h3>
 
 <pre>
-git clone https://github.com/yourusername/fresh-fruit-website.git
-cd fresh-fruit-website
+git clone https://github.com/Kalhara2000/React-E-commerce.git
+cd React-E-commerce
 </pre>
 
 <h3>📦 2. Install Dependencies</h3>
@@ -131,15 +131,19 @@ JWT_SECRET=your_jwt_secret
 
 <h2>📸 Screenshots</h2>
 
-<p><em>Add screenshots or screen recordings of the frontend and admin panel here.</em></p>
+<p>
+<img width="1919" height="1028" alt="Screenshot 2025-07-10 212020" src="https://github.com/user-attachments/assets/20b9c57f-4175-4639-b7d1-a3391311de92" />
+
+<img width="1919" height="1029" alt="Screenshot 2025-07-10 212052" src="https://github.com/user-attachments/assets/f305c7d6-4681-4e0f-9006-82b1972f0240" />
+</p>
 
 <hr />
 
 <h2>👤 Author</h2>
 
 <p><strong>Thamindu Kalhara</strong><br/>
-📧 <a href="mailto:youremail@example.com">youremail@example.com</a><br/>
-🌐 <a href="https://github.com/yourusername">GitHub</a> | <a href="https://linkedin.com/in/yourprofile">LinkedIn</a>
+📧 <a href="mailto:20.kalhara@gmail.com">20.kalhara@gmail.com</a><br/>
+🌐 <a href="https://github.com/Kalhara2000">GitHub</a> | <a href="https://www.linkedin.com/in/ktdt-kalhara">LinkedIn</a>
 </p>
 
 <hr />
